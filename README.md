@@ -15,7 +15,9 @@ took inspiration from http://aima.cs.berkeley.edu/python/mdp.html
 ## 1. MDP System
 
 a) state space size = H*L
+
 b) action space size = 5
+
 c) mdp_prob(). It is denoted in a commented section in the code
 
 
