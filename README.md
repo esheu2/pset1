@@ -44,14 +44,16 @@ d) bellman()
 
 e) policy_iteration() and expected_utility()
 
-f)
-
-g)
+f) The run time is 0.0199 seconds. (We suspect that our policy_iteration() is not running to the extent intended)
 
 
 ## 4. Value iteration
 
-asdf
+a) value_iteration() and create_policy()
+
+b) See code.
+
+c) The run time is 0.001 seconds. (Once again, we suspect that our value_iteration() is not running to the extent intended)
 
 
 ## 5. Additional scenarios
