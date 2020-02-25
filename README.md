@@ -9,7 +9,6 @@ Gabriel Baltazar
 
 b) Resources:
 class notes
-took inspiration from http://aima.cs.berkeley.edu/python/mdp.html
 
 
 ## 1. MDP System
