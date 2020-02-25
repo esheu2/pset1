@@ -37,9 +37,14 @@ e)policy_iteration() and expected_utility()
 f)
 g)
 
+4.
+
+asdf
+
 
 5.
 
+We were unable to get the algorithms to work as intended. Instead, these answers are what we speculated would theoretically happen.
 a)
 As the probability of error goes up, the prioritized path is led further from the red spaces so as to avoid accidentally entering them. In other words, it prioritizes "safety"
 

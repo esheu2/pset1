@@ -148,16 +148,31 @@ def policy_iteration(pi):
         counter += 1
         print(counter)
 
+#4a
+def value_iteration(pi):
+    V1 = {}
+    for i in range(Length):
+        for j in range(Height):
+            V[(i,j)] = 0
+    while True:
+        V = V1.copy()
+        delta = 0
+        for i in range(Length):
+            for j in range(Height):
+                state = (i,j)
+                temp_arr = [(mdp_prob(state,action,(state[0]+1,state[1]+0)),(state[0]+1,state[1]+0)),
+                (mdp_prob(state,action,(state[0]-1,state[1]+0)),(state[0]-1,state[1]+0)),
+                (mdp_prob(state,action,(state[0]+0,state[1]+1)),(state[0]+0,state[1]+1)),
+                (mdp_prob(state,action,(state[0]+0,state[1]-1)),(state[0]+0,state[1]-1))]
+                U1[state] = expected_reward(state) + gamma * max()
 
+
+'''
+output stuff
+down here
+'''
 #3b continuation. Showing pi_0, the initial policy
-'''
 show_policy(policy)
-V = policy_evaluation(policy)
-print(V)
-bellman_policy = bellman(V)
-print(bellman_policy)
-'''
+
 policy = policy_iteration(policy)
 v = policy_evaluation(policy)
-print(policy)
-print(v)
