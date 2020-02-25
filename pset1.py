@@ -1,4 +1,5 @@
 import numpy as np
+import time
 
 actions = R, U, L, D, N = [(1, 0), (0, 1), (-1, 0), (0, -1), (0, 0)]
 
@@ -132,7 +133,6 @@ def bellman(V,pi):
 
 #3e
 def policy_iteration(pi):
-    counter = 0
     while True:
         V = policy_evaluation(pi)
         temp = pi.copy()
@@ -145,26 +145,43 @@ def policy_iteration(pi):
                     unchanged = False
         if unchanged:
             return pi
-        counter += 1
-        print(counter)
 
 #4a
 def value_iteration(pi):
     V1 = {}
     for i in range(Length):
         for j in range(Height):
-            V[(i,j)] = 0
+            V1[(i,j)] = 0
     while True:
         V = V1.copy()
         delta = 0
         for i in range(Length):
             for j in range(Height):
                 state = (i,j)
-                temp_arr = [(mdp_prob(state,action,(state[0]+1,state[1]+0)),(state[0]+1,state[1]+0)),
-                (mdp_prob(state,action,(state[0]-1,state[1]+0)),(state[0]-1,state[1]+0)),
-                (mdp_prob(state,action,(state[0]+0,state[1]+1)),(state[0]+0,state[1]+1)),
-                (mdp_prob(state,action,(state[0]+0,state[1]-1)),(state[0]+0,state[1]-1))]
-                U1[state] = expected_reward(state) + gamma * max()
+                V1[state] = expected_reward(state) + gamma * max([expected_utility(state, action, V1) for action in actions])
+                delta = max(delta, abs(V1[state] - V[state]))
+            if delta < 0.001 * (1 - gamma) / gamma:
+                return V
+
+def create_policy(V):
+    pi = {}
+    for i in range(Length):
+        for j in range(Height):
+            state = (i,j)
+            best = None
+            for a in actions:
+                utility = expected_utility(a,state,V)
+                if best == None:
+                    best = a,utility
+                else:
+                    if utility > best[1]:
+                        best = a,utility
+            if state not in pi:
+                pi[state] = best[0]
+            else:
+                pi[state] != best[0]
+                pi[state] = best[0]
+    return pi
 
 
 '''
@@ -174,5 +191,14 @@ down here
 #3b continuation. Showing pi_0, the initial policy
 show_policy(policy)
 
-policy = policy_iteration(policy)
-v = policy_evaluation(policy)
+start = time.time()
+#policy = policy_iteration(policy)
+#v = policy_evaluation(policy)
+#show_policy(policy)
+
+V = value_iteration(policy)
+pi_opt = create_policy(V)
+show_policy(pi_opt)
+end = time.time()
+elapsed = (end-start)
+print(elapsed)
