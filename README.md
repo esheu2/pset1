@@ -9,17 +9,20 @@ b) Resources:
 class notes
 took inspiration from http://aima.cs.berkeley.edu/python/mdp.html
 
+
 1
 
 a) state space size = H*L
 b) action space size = 5
 c) mdp_prob(). It is denoted in a commented section in the code
 
+
 2
 
 Parts are denoted in commented sections in the code
 a) mdp_prob()
 b) expected_reward()
+
 
 3
 
@@ -31,6 +34,7 @@ d)bellman()
 e)policy_iteration() and expected_utility()
 f)
 g)
+
 
 5
 
