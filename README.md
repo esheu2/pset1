@@ -1,6 +1,6 @@
 # Problem Set 1
 
-0.
+## 0. Preliminaries
 
 a) Collaborators:
 Everett Sheu
@@ -12,21 +12,21 @@ class notes
 took inspiration from http://aima.cs.berkeley.edu/python/mdp.html
 
 
-1.
+## 1. MDP System
 
 a) state space size = H*L
 b) action space size = 5
 c) mdp_prob(). It is denoted in a commented section in the code
 
 
-2.
+## 2. Planning problem
 
 Parts are denoted in commented sections in the code
 a) mdp_prob()
 b) expected_reward()
 
 
-3.
+## 3. Policy iteration
 
 Parts are denoted in commented sections in the code
 a) Near the top with the initialization and global variables
@@ -37,12 +37,12 @@ e)policy_iteration() and expected_utility()
 f)
 g)
 
-4.
+## 4. Value iteration
 
 asdf
 
 
-5.
+## 5. Additional scenarios
 
 We were unable to get the algorithms to work as intended. Instead, these answers are what we speculated would theoretically happen.
 a)
